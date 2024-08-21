@@ -7,9 +7,8 @@ from base_caching import BaseCaching
 
 class LIFOCache(BaseCaching):
     """
-    Represents an object that allows storing and
-    retrieving items from a dictionary with a LIFO
-    removal mechanism when the limit is reached.
+    Represents an object that allows storing and retrieving items from
+    a dictionary with a LIFO removal mechanism when the limit is reached.
     """
     def __init__(self):
         """Initializes the cache."""
@@ -28,6 +27,5 @@ class LIFOCache(BaseCaching):
         self.cache_data.move_to_end(key, last=True)
 
     def get(self, key):
-        """Retrieves an item by key.
-        """
+        """Retrieves an item by key."""
         return self.cache_data.get(key, None)
